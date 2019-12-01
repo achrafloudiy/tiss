@@ -77,7 +77,7 @@
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
                   <select id='professions' class="form-control">
-                  <option value='emploi'>Sélectionnez un emploi</option>
+                    <option value='emploi'>Sélectionnez un emploi</option>
                   </select>
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
@@ -102,38 +102,38 @@
       <div class="container">
         <div class="row mb-5 justify-content-center">
           <div class="col-md-7 text-center">
-            <h2 class="section-title mb-2 text-white">Careers Statistics</h2>
-            <p class="lead text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita unde officiis recusandae sequi excepturi corrupti.</p>
+            <h2 class="section-title mb-2 text-white">Nos statistiques</h2>
           </div>
         </div>
         <div class="row pb-0 block__19738 section-counter">
 
           <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
             <div class="d-flex align-items-center justify-content-center mb-2">
-              <strong class="number" data-number="1930">0</strong>
+              <strong class="number" data-number=<?php include 'StatistiquesEmployes.php';?>>0</strong>
             </div>
-            <span class="caption">Candidates</span>
+            <span class="caption">Candidats</span>
           </div>
 
           <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
             <div class="d-flex align-items-center justify-content-center mb-2">
               <strong class="number" data-number="54">0</strong>
             </div>
-            <span class="caption">Jobs Posted</span>
+            <span class="caption">Emplois affichés</span>
           </div>
 
           <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
             <div class="d-flex align-items-center justify-content-center mb-2">
               <strong class="number" data-number="120">0</strong>
             </div>
-            <span class="caption">Jobs Filled</span>
+            <span class="caption">Emplois comblés</span>
           </div>
 
           <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
             <div class="d-flex align-items-center justify-content-center mb-2">
-              <strong class="number" data-number="550">0</strong>
+              
+              <strong class="number" data-number=<?php include 'StatistiquesEntreprises.php';?>>0</strong>
             </div>
-            <span class="caption">Companies</span>
+            <span class="caption">Entreprises partenaires</span>
           </div>
 
             

@@ -15,19 +15,17 @@ function GetDomaine($data){
         while ($row = mysqli_fetch_array($result)){
           $idDomaine = $row['ID'];
           }
-    } else {
-        echo "0 results";
     } 
     
     $sql = "SELECT Nom FROM metier WHERE ID_Domaine = '{$idDomaine}'";
     $result = $db->query($sql);
     if ($result->num_rows > 0) {
-  
+      echo "<option value='emploi'>Selectionnez un emploi</option>";
         while ($row = mysqli_fetch_array($result)){
           echo "<option value='". $row['Nom'] ."'>" .$row['Nom'] ."</option>" ;
           }
     } else {
-        echo "0 results";
+      echo "<option value='emploi'>Selectionnez un emploi</option>";
     }   
   }
   catch(PDOException $e)
