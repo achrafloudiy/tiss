@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Careers &mdash; Website Template by Colorlib</title>
+ <title>Tiss emplois || Poste</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="css/custom-bs.css">
@@ -34,13 +34,14 @@
     <header class="site-navbar mt-3">
       <div class="container-fluid">
         <div class="row align-items-center">
-          <div class="site-logo col-6"><a href="index.php">Careers</a></div>
+             <div class="site-logo col-6"><a href="index.php"><img id='logotiss' src='images/logo.png'></img></a></div>
+
 
           <nav class="mx-auto site-navigation">
             <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-              <li><a href="index.php" class="nav-link">Home</a></li>
-              <li><a href="job-listings.php" class="active">Job Listings</a></li>
-              <li><a href="about.php">About</a></li>
+              <li><a href="index.php" class="nav-link">Accueil</a></li>
+              <li><a href="job-listings.php" class="active">Emplois disponibles</a></li>
+              <li><a href="about.php">À propos</a></li>
               <li><a href="services.php">Services</a></li>
               <li><a href="blog.php">Blog</a></li>
               <li class="d-lg-none"><a href="contact.php">Contact Us</a></li>
@@ -205,64 +206,57 @@
       </div>
     </section>
 
-    <footer class="site-footer">
-
-
+    <footer class="site-footer">    
       <div class="container">
         <div class="row mb-5">
           <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>Search Trending</h3>
+            <h3>Site</h3>
             <ul class="list-unstyled">
-              <li><a href="#">Web Design</a></li>
-              <li><a href="#">Graphic Design</a></li>
-              <li><a href="#">Web Developers</a></li>
-              <li><a href="#">Python</a></li>
-              <li><a href="#">HTML5</a></li>
-              <li><a href="#">CSS3</a></li>
+              <li><a href="#">Emplois disponibles</a></li>
+              <li><a href="#">Services</a></li>
             </ul>
           </div>
           <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>Company</h3>
+            <h3>Entreprise</h3>
             <ul class="list-unstyled">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Career</a></li>
+              <li><a href="#">À Propos</a></li>
               <li><a href="#">Blog</a></li>
-              <li><a href="#">Resources</a></li>
             </ul>
           </div>
           <div class="col-6 col-md-3 mb-4 mb-md-0">
             <h3>Support</h3>
             <ul class="list-unstyled">
-              <li><a href="#">Support</a></li>
-              <li><a href="#">Privacy</a></li>
-              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Service à la clientèle</a></li>
+              <li><a href="#">Vie privée</a></li>
+              <li><a href="#">Conditions d'utilisation</a></li>
             </ul>
           </div>
-          <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>Contact Us</h3>
+          <div class="col-6 col-md-3 mb-4 mb-md-0">            
+            <h3>Contactez-nous</h3>
             <div class="footer-social">
               <a href="#"><span class="icon-facebook"></span></a>
-              <a href="#"><span class="icon-twitter"></span></a>
               <a href="#"><span class="icon-instagram"></span></a>
               <a href="#"><span class="icon-linkedin"></span></a>
             </div>
           </div>
         </div>
-
+        <div class="row text-center">
+          <div class="col-12">
+            <img id='logofooter' src="images/logo.png"></img>
+          </div>
+        </div>
         <div class="row text-center">
           <div class="col-12">
             <p>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
-              with <i class="icon-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                target="_blank">Colorlib</a>
+              Tiss &copy;
+              <script>document.write(new Date().getFullYear());</script> tout droit réservé |  site web créé par <a id="achrafloudiy" href="http://ashsolutions.com" target="_blank">Achraf Loudiy</a>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
           </div>
         </div>
       </div>
-    </footer>
+    </footer>  
 
   </div>
 

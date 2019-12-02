@@ -1,8 +1,8 @@
     //Achraf
     
-    $( document ).ready(function() {
+    $( document ).ready(function() {                
         $('#domaines').off('change').on('change', function () {
-            var selectedValue = $(this).val();
+            var selectedValue = $(this).val();           
             getOutput(selectedValue);
           });
     });

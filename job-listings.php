@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Careers &mdash; Website Template by Colorlib</title>
+  <title>Tiss emplois || Emplois disponibles</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="css/custom-bs.css">
@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="css/owl.carousel.min.css">
   <link rel="stylesheet" href="css/animate.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Baskervville&display=swap" rel="stylesheet">  
+  <?php include 'DBConnect.php';?>
 </head>
 
 <body id="top">
@@ -34,7 +36,8 @@
     <header class="site-navbar mt-3">
       <div class="container-fluid">
         <div class="row align-items-center">
-          <div class="site-logo col-6"><a href="index.php">Careers</a></div>
+        <div class="site-logo col-6"><a href="index.php"><img id='logotiss' src='images/logo.png'></img></a></div>
+
 
           <nav class="mx-auto site-navigation">
             <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
@@ -61,15 +64,14 @@
     </header>
 
     <!-- HOME -->
-    <section class="home-section section-hero inner-page overlay bg-image" style="background-image: url('images/bandeau.jpg');"
+    <section class="home-section section-hero inner-page overlay bg-image" style="background-image: url('images/toronto.jpg');"
       id="home-section">
 
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-12">
             <div class="mb-5 text-center">
-              <h1 class="text-white font-weight-bold">Job Listings</h1>
-              <p>Find your dream jobs in our powerful career website template.</p>
+              <h1 class="text-white">Emplois disponibles</h1>
             </div>
           </div>
         </div>
@@ -78,18 +80,41 @@
 
     </section>
 
-    
+    <!-- Datatable-->
 
     <section class="site-section">
       <div class="container">
 
-        <div class="row mb-5 justify-content-center">
+      <div class="row mb-5 justify-content-center">
           <div class="col-md-7 text-center">
-            <h2 class="section-title mb-2">109,234 Job Listed</h2>
+            <h2 class="section-title mb-2">Nos <?php include 'StatistiquesEmploisAffiches.php';?> postes affichés</h2>
           </div>
         </div>
 
-
+        <table id="tablePostes" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>Poste</th>
+                <th>Lieu</th>
+                <th>Type</th>
+                <th>Salaire</th>
+                <th>Date de pubication</th>
+                <th>Expérience</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php include 'PopulerPostes.php';?>
+            <tr>
+                <td><a href=""><h2>Programmeur web</h2></a><strong>Domaine: </strong>TI</td>
+                <td>Québec</td>
+                <td>Temps plein</td>
+                <td><strong>30k - 40k</strong></td>
+                <td>2011/04/25</td>
+                <td>2 - 5 ans</td>
+            </tr>
+        </tbody>
+    </table>
+      <!--
         <div class="mb-5">
           <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
             <div class="col-md-2">
@@ -233,11 +258,11 @@
             </div>
           </div>
         </div>
-
+-->
       </div>
     </section>
 
-    <section class="site-section py-4 mb-5 border-top">
+    <section class="site-section py-4 mb-5 border-top" style="display:none">
       <div class="container">
 
         <div class="row align-items-center">
@@ -267,70 +292,65 @@
       </div>
     </section>
 
-    <footer class="site-footer">
-
-
+    <footer class="site-footer">    
       <div class="container">
         <div class="row mb-5">
           <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>Search Trending</h3>
+            <h3>Site</h3>
             <ul class="list-unstyled">
-              <li><a href="#">Web Design</a></li>
-              <li><a href="#">Graphic Design</a></li>
-              <li><a href="#">Web Developers</a></li>
-              <li><a href="#">Python</a></li>
-              <li><a href="#">HTML5</a></li>
-              <li><a href="#">CSS3</a></li>
+              <li><a href="#">Emplois disponibles</a></li>
+              <li><a href="#">Services</a></li>
             </ul>
           </div>
           <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>Company</h3>
+            <h3>Entreprise</h3>
             <ul class="list-unstyled">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Career</a></li>
+              <li><a href="#">À Propos</a></li>
               <li><a href="#">Blog</a></li>
-              <li><a href="#">Resources</a></li>
             </ul>
           </div>
           <div class="col-6 col-md-3 mb-4 mb-md-0">
             <h3>Support</h3>
             <ul class="list-unstyled">
-              <li><a href="#">Support</a></li>
-              <li><a href="#">Privacy</a></li>
-              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Service à la clientèle</a></li>
+              <li><a href="#">Vie privée</a></li>
+              <li><a href="#">Conditions d'utilisation</a></li>
             </ul>
           </div>
-          <div class="col-6 col-md-3 mb-4 mb-md-0">
+          <div class="col-6 col-md-3 mb-4 mb-md-0">            
             <h3>Contactez-nous</h3>
             <div class="footer-social">
               <a href="#"><span class="icon-facebook"></span></a>
-              <a href="#"><span class="icon-twitter"></span></a>
               <a href="#"><span class="icon-instagram"></span></a>
               <a href="#"><span class="icon-linkedin"></span></a>
             </div>
           </div>
         </div>
-
+        <div class="row text-center">
+          <div class="col-12">
+            <img id='logofooter' src="images/logo.png"></img>
+          </div>
+        </div>
         <div class="row text-center">
           <div class="col-12">
             <p>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
-              with <i class="icon-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                target="_blank">Colorlib</a>
+              Tiss &copy;
+              <script>document.write(new Date().getFullYear());</script> tout droit réservé |  site web créé par <a id="achrafloudiy" href="http://ashsolutions.com" target="_blank">Achraf Loudiy</a>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
           </div>
         </div>
       </div>
-    </footer>
+    </footer>  
 
   </div>
 
   <!-- SCRIPTS -->
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
   <script src="js/isotope.pkgd.min.js"></script>
   <script src="js/stickyfill.min.js"></script>
   <script src="js/jquery.fancybox.min.js"></script>
@@ -343,7 +363,8 @@
   <!-- <script src="js/bootstrap-select.min.js"></script> -->
 
   <script src="js/custom.js"></script>
-
+  <script src="js/datatable.js"></script>
+ 
 
 </body>
 

@@ -7,7 +7,6 @@ try
   $db = mysqli_connect($serveur, $login, $pass, "tiss") or die("Failed to 
   connect to MySQL: " . mysqli_error());
   $db->set_charset("utf8");
-  echo 'connexion réussie';
 }
 catch(PDOException $e)
 {

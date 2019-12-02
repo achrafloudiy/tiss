@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="css/owl.carousel.min.css">
   <link rel="stylesheet" href="css/animate.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Baskervville&display=swap" rel="stylesheet">  
 </head>
 
 <body id="top">
@@ -34,22 +35,23 @@
     <header class="site-navbar mt-3">
       <div class="container-fluid">
         <div class="row align-items-center">
-          <div class="site-logo col-6"><a href="index.html">Careers</a></div>
+        <div class="site-logo col-6"><a href="index.php"><img id='logotiss' src='images/logo.png'></img></a></div>
+
 
           <nav class="mx-auto site-navigation">
             <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-              <li><a href="index.html" class="nav-link">Accueil</a></li>
-              <li><a href="job-listings.html">Emplois disponibles</a></li>
-              <li><a href="about.html">À propos</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li class="d-lg-none"><a href="contact.html"  class="active">Contactez-nous</a></li>
+              <li><a href="index.php" class="nav-link">Accueil</a></li>
+              <li><a href="job-listings.php">Emplois disponibles</a></li>
+              <li><a href="about.php">À propos</a></li>
+              <li><a href="services.php">Services</a></li>
+              <li><a href="blog.php">Blog</a></li>
+              <li class="d-lg-none"><a href="contact.php"  class="active">Contactez-nous</a></li>
             </ul>
           </nav>
 
           <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
             <div class="ml-auto">
-              <a href="contact.html" class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span
+              <a href="contact.php" class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span
                   class="mr-2 icon-paper-plane"></span>Contactez-nous</a>
             </div>
             <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span
@@ -67,8 +69,7 @@
         <div class="row align-items-center justify-content-center">
           <div class="col-md-12">
             <div class="mb-5 text-center">
-              <h1 class="text-white font-weight-bold">Contactez-nous</h1>
-              <p>Find your dream jobs in our powerful career website template.</p>
+              <h1 class="text-white">Contactez-nous</h1>
             </div>
           </div>
         </div>
@@ -84,11 +85,11 @@
     
               <div class="row form-group">
                 <div class="col-md-6 mb-3 mb-md-0">
-                  <label class="text-black" for="fname">First Name</label>
+                  <label class="text-black" for="fname">Prénom</label>
                   <input type="text" id="fname" class="form-control">
                 </div>
                 <div class="col-md-6">
-                  <label class="text-black" for="lname">Last Name</label>
+                  <label class="text-black" for="lname">Nom</label>
                   <input type="text" id="lname" class="form-control">
                 </div>
               </div>
@@ -104,7 +105,7 @@
               <div class="row form-group">
     
                 <div class="col-md-12">
-                  <label class="text-black" for="subject">Subject</label>
+                  <label class="text-black" for="subject">Sujet</label>
                   <input type="subject" id="subject" class="form-control">
                 </div>
               </div>
@@ -129,13 +130,13 @@
           <div class="col-lg-5 ml-auto">
             <div class="p-4 mb-3 bg-white">
               <p class="mb-0 font-weight-bold">Address</p>
-              <p class="mb-4">203 Fake St. Mountain View, San Francisco, California, USA</p>
+              <p class="mb-4">boite postale bidon</p>
     
-              <p class="mb-0 font-weight-bold">Phone</p>
+              <p class="mb-0 font-weight-bold">Téléphone</p>
               <p class="mb-4"><a href="#">+1 232 3235 324</a></p>
     
-              <p class="mb-0 font-weight-bold">Email Address</p>
-              <p class="mb-0"><a href="#">youremail@domain.com</a></p>
+              <p class="mb-0 font-weight-bold">Email</p>
+              <p class="mb-0"><a href="#">info@tissemploi.com</a></p>
     
             </div>
           </div>
@@ -143,44 +144,35 @@
       </div>
     </section>
 
-    <footer class="site-footer">
-
-
+    <footer class="site-footer">    
       <div class="container">
         <div class="row mb-5">
           <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>Search Trending</h3>
+            <h3>Site</h3>
             <ul class="list-unstyled">
-              <li><a href="#">Web Design</a></li>
-              <li><a href="#">Graphic Design</a></li>
-              <li><a href="#">Web Developers</a></li>
-              <li><a href="#">Python</a></li>
-              <li><a href="#">HTML5</a></li>
-              <li><a href="#">CSS3</a></li>
+              <li><a href="#">Emplois disponibles</a></li>
+              <li><a href="#">Services</a></li>
             </ul>
           </div>
           <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>Company</h3>
+            <h3>Entreprise</h3>
             <ul class="list-unstyled">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Career</a></li>
+              <li><a href="#">À Propos</a></li>
               <li><a href="#">Blog</a></li>
-              <li><a href="#">Resources</a></li>
             </ul>
           </div>
           <div class="col-6 col-md-3 mb-4 mb-md-0">
             <h3>Support</h3>
             <ul class="list-unstyled">
-              <li><a href="#">Support</a></li>
-              <li><a href="#">Privacy</a></li>
-              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Service à la clientèle</a></li>
+              <li><a href="#">Vie privée</a></li>
+              <li><a href="#">Conditions d'utilisation</a></li>
             </ul>
           </div>
           <div class="col-6 col-md-3 mb-4 mb-md-0">
             <h3>Contactez-nous</h3>
             <div class="footer-social">
               <a href="#"><span class="icon-facebook"></span></a>
-              <a href="#"><span class="icon-twitter"></span></a>
               <a href="#"><span class="icon-instagram"></span></a>
               <a href="#"><span class="icon-linkedin"></span></a>
             </div>
@@ -190,12 +182,8 @@
         <div class="row text-center">
           <div class="col-12">
             <p>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
-              with <i class="icon-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                target="_blank">Colorlib</a>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Tiss &copy;
+              <script>document.write(new Date().getFullYear());</script> tout droit réservé |  site web créé par <a id="achrafloudiy" href="http://ashsolutions.com" target="_blank">Achraf Loudiy</a>
             </p>
           </div>
         </div>

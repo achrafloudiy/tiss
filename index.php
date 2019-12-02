@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Tiss Emplois</title>
+  <title>Tiss emplois || Accueil</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/custom-bs.css">
@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="fonts/line-icons/style.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="css/style.css">    
+    <link rel="stylesheet" href="css/style.css">  
+    <link href="https://fonts.googleapis.com/css?family=Baskervville&display=swap" rel="stylesheet">  
     <?php include 'DBConnect.php';?>
   </head>
   <body id="top">
@@ -33,7 +34,7 @@
     <header class="site-navbar mt-3">
       <div class="container-fluid">
         <div class="row align-items-center">
-          <div class="site-logo col-6"><a href="index.php">TISS</a></div>
+          <div class="site-logo col-6"><a href="index.php"><img id='logotiss' src='images/logo.png'></img></a></div>
 
           <nav class="mx-auto site-navigation">
             <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
@@ -64,10 +65,10 @@
         <div class="row align-items-center justify-content-center">
           <div class="col-md-12">
             <div class="mb-5 text-center">
-              <h1 class="text-white font-weight-bold">Débutez-votre nouvelle carrière</h1>
-              <p>Étape 1: Trouvez votre emploi au Canada.</p>
+              <h1 class="text-white">Débutez-votre nouvelle carrière</h1>
+              <p>Trouvez votre emploi au Canada.</p>
             </div>
-            <form method="post" class="search-jobs-form">
+            <form method="post" class="search-jobs-form" action="RecherchePostes.php">
               <div class="row mb-5">
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
                   <select id='domaines' class="form-control">
@@ -77,12 +78,12 @@
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
                   <select id='professions' class="form-control">
-                    <option value='emploi'>Sélectionnez un emploi</option>
+                    <option value='poste' name='poste'>Sélectionnez un emploi</option>
                   </select>
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
                   <select id='villes' class="form-control">
-                  <option value='domaine'>toutes les villes</option>
+                  <option value='ville' name='ville'>toutes les villes</option>
                   <?php include 'PopulerVilles.php';?>
                   </select>
                 </div>
@@ -116,16 +117,16 @@
 
           <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
             <div class="d-flex align-items-center justify-content-center mb-2">
-              <strong class="number" data-number="54">0</strong>
+              <strong class="number" data-number=<?php include 'StatistiquesEmploisAffiches.php';?>>0</strong>
             </div>
-            <span class="caption">Emplois affichés</span>
+            <span class="caption">Postes affichés</span>
           </div>
 
           <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
             <div class="d-flex align-items-center justify-content-center mb-2">
-              <strong class="number" data-number="120">0</strong>
+              <strong class="number" data-number=<?php include 'StatistiquesEmploisCombles.php';?>>0</strong>
             </div>
-            <span class="caption">Emplois comblés</span>
+            <span class="caption">Postes comblés</span>
           </div>
 
           <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
@@ -143,175 +144,16 @@
 
     
 
-    <section class="site-section">
-      <div class="container">
-
-        <div class="row mb-5 justify-content-center">
-          <div class="col-md-7 text-center">
-            <h2 class="section-title mb-2">109,234 Job Listed</h2>
-          </div>
-        </div>
-        
-
-        <div class="mb-5">
-          <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
-            <div class="col-md-2">
-              <a href="job-single.php"><img src="images/featured-listing-1.jpg" alt="Image" class="img-fluid"></a>
-            </div>
-            <div class="col-md-4">
-              <span class="badge badge-primary px-2 py-1 mb-3">Freelancer</span>
-              <h2><a href="job-single.php">Dropbox Product Designer</a> </h2>
-              <p class="meta">Publisher: <strong>John Stewart</strong> In: <strong>Design</strong></p>
-            </div>
-            <div class="col-md-3 text-left">
-              <h3>Melbourn</h3>
-              <span class="meta">Australia</span>
-            </div>
-            <div class="col-md-3 text-md-right">
-              <strong class="text-black">$60k &mdash; $100k</strong>
-            </div>
-          </div>
-
-          <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
-            <div class="col-md-2">
-              <a href="job-single.php"><img src="images/featured-listing-2.jpg" alt="Image" class="img-fluid"></a>
-            </div>
-            <div class="col-md-4">
-              <span class="badge badge-warning px-2 py-1 mb-3">Full-time</span>
-              <h2><a href="job-single.php">Creative Director in Intercom</a> </h2>
-              <p class="meta">Publisher: <strong>John Stewart</strong> In: <strong>Design</strong></p>
-            </div>
-            <div class="col-md-3 text-left">
-              <h3>London</h3>
-              <span class="meta">United Kingdom</span>
-            </div>
-            <div class="col-md-3 text-md-right">
-              <strong class="text-black">$60k &mdash; $100k</strong>
-            </div>
-          </div>
-
-          <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
-            <div class="col-md-2">
-              <a href="job-single.php"><img src="images/featured-listing-3.jpg" alt="Image" class="img-fluid"></a>
-            </div>
-            <div class="col-md-4">
-              <span class="badge badge-success px-2 py-1 mb-3">Part-time</span>
-              <h2><a href="job-single.php">FullStack Developer in Shopify</a> </h2>
-              <p class="meta">Publisher: <strong>John Stewart</strong> In: <strong>Design</strong></p>
-            </div>
-            <div class="col-md-3 text-left">
-              <h3>London</h3>
-              <span class="meta">United Kingdom</span>
-            </div>
-            <div class="col-md-3 text-md-right">
-              <strong class="text-black">$60k &mdash; $100k</strong>
-            </div>
-          </div>
-          <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
-            <div class="col-md-2">
-              <a href="job-single.php"><img src="images/featured-listing-4.jpg" alt="Image" class="img-fluid"></a>
-            </div>
-            <div class="col-md-4">
-              <span class="badge badge-primary px-2 py-1 mb-3">Freelancer</span>
-              <h2><a href="job-single.php">Dropbox Product Designer</a> </h2>
-              <p class="meta">Publisher: <strong>John Stewart</strong> In: <strong>Design</strong></p>
-            </div>
-            <div class="col-md-3 text-left">
-              <h3>Melbourn</h3>
-              <span class="meta">Australia</span>
-            </div>
-            <div class="col-md-3 text-md-right">
-              <strong class="text-black">$60k &mdash; $100k</strong>
-            </div>
-          </div>
-          
-          <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
-            <div class="col-md-2">
-              <a href="job-single.php"><img src="images/featured-listing-5.jpg" alt="Image" class="img-fluid"></a>
-            </div>
-            <div class="col-md-4">
-              <span class="badge badge-warning px-2 py-1 mb-3">Full-time</span>
-              <h2><a href="job-single.php">Creative Director in Intercom</a> </h2>
-              <p class="meta">Publisher: <strong>John Stewart</strong> In: <strong>Design</strong></p>
-            </div>
-            <div class="col-md-3 text-left">
-              <h3>London</h3>
-              <span class="meta">United Kingdom</span>
-            </div>
-            <div class="col-md-3 text-md-right">
-              <strong class="text-black">$60k &mdash; $100k</strong>
-            </div>
-          </div>
-          
-          <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
-            <div class="col-md-2">
-              <a href="job-single.php"><img src="images/featured-listing-4.jpg" alt="Image" class="img-fluid"></a>
-            </div>
-            <div class="col-md-4">
-              <span class="badge badge-success px-2 py-1 mb-3">Part-time</span>
-              <h2><a href="job-single.php">FullStack Developer in Shopify</a> </h2>
-              <p class="meta">Publisher: <strong>John Stewart</strong> In: <strong>Design</strong></p>
-            </div>
-            <div class="col-md-3 text-left">
-              <h3>London</h3>
-              <span class="meta">United Kingdom</span>
-            </div>
-            <div class="col-md-3 text-md-right">
-              <strong class="text-black">$60k &mdash; $100k</strong>
-            </div>
-          </div>
-
-          <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
-            <div class="col-md-2">
-              <a href="job-single.php"><img src="images/featured-listing-3.jpg" alt="Image" class="img-fluid"></a>
-            </div>
-            <div class="col-md-4">
-              <span class="badge badge-success px-2 py-1 mb-3">Part-time</span>
-              <h2><a href="job-single.php">FullStack Developer in Shopify</a> </h2>
-              <p class="meta">Publisher: <strong>John Stewart</strong> In: <strong>Design</strong></p>
-            </div>
-            <div class="col-md-3 text-left">
-              <h3>London</h3>
-              <span class="meta">United Kingdom</span>
-            </div>
-            <div class="col-md-3 text-md-right">
-              <strong class="text-black">$60k &mdash; $100k</strong>
-            </div>
-          </div>
-
-        </div>
-        
-        <div class="row pagination-wrap">
-          
-          <div class="col-md-6 text-center text-md-left">
-            <div class="custom-pagination ml-auto">
-              <a href="#" class="prev">Previous</a>
-              <div class="d-inline-block">
-                <a href="#" class="active">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-              </div>
-              <a href="#" class="next">Next</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
     
-
-    
-    <section class="site-section py-4 mb-5 border-top">
+    <section class="site-section py-4 mb-5 border-top" style="display:none">
       <div class="container">
   
         <div class="row align-items-center">
           <div class="col-12 text-center mt-4 mb-5">
             <div class="row justify-content-center">
               <div class="col-md-7">
-                <h2 class="section-title mb-2">Our Candidates Work In Company</h2>
-                <p class="lead">Porro error reiciendis commodi beatae omnis similique voluptate rerum ipsam fugit mollitia ipsum facilis expedita tempora suscipit iste</p>
+                <h2 class="section-title mb-2">Nos candidats travaillent pour des entreprises canadiennes de renom</h2>
+                <p class="lead">Nous avons aidé plusieurs entreprise à combler leur manque de main d'oeuvre en ville et en région.</p>
               </div>
             </div>
             
@@ -333,7 +175,7 @@
     </section>
 
 
-    <section class="bg-light pt-5 testimony-full">
+    <section class="bg-light pt-5 testimony-full" style="display:none">
         
         <div class="owl-carousel single-carousel">
 
@@ -366,64 +208,57 @@
 
     </section>
     
-    <footer class="site-footer">
-
-      
+    <footer class="site-footer">    
       <div class="container">
         <div class="row mb-5">
           <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>Search Trending</h3>
+            <h3>Site</h3>
             <ul class="list-unstyled">
-              <li><a href="#">Web Design</a></li>
-              <li><a href="#">Graphic Design</a></li>
-              <li><a href="#">Web Developers</a></li>
-              <li><a href="#">Python</a></li>
-              <li><a href="#">HTML5</a></li>
-              <li><a href="#">CSS3</a></li>
+              <li><a href="#">Emplois disponibles</a></li>
+              <li><a href="#">Services</a></li>
             </ul>
           </div>
           <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>Company</h3>
+            <h3>Entreprise</h3>
             <ul class="list-unstyled">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Career</a></li>
+              <li><a href="#">À Propos</a></li>
               <li><a href="#">Blog</a></li>
-              <li><a href="#">Resources</a></li>
             </ul>
           </div>
           <div class="col-6 col-md-3 mb-4 mb-md-0">
             <h3>Support</h3>
             <ul class="list-unstyled">
-              <li><a href="#">Support</a></li>
-              <li><a href="#">Privacy</a></li>
-              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Service à la clientèle</a></li>
+              <li><a href="#">Vie privée</a></li>
+              <li><a href="#">Conditions d'utilisation</a></li>
             </ul>
           </div>
-          <div class="col-6 col-md-3 mb-4 mb-md-0">
+          <div class="col-6 col-md-3 mb-4 mb-md-0">            
             <h3>Contactez-nous</h3>
             <div class="footer-social">
               <a href="#"><span class="icon-facebook"></span></a>
-              <a href="#"><span class="icon-twitter"></span></a>
               <a href="#"><span class="icon-instagram"></span></a>
               <a href="#"><span class="icon-linkedin"></span></a>
             </div>
           </div>
         </div>
-
         <div class="row text-center">
           <div class="col-12">
+            <img id='logofooter' src="images/logo.png"></img>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div id="textfooter" class="col-12">
             <p>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i
-                class="icon-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+              Tiss &copy;
+              <script>document.write(new Date().getFullYear());</script> tout droit réservé |  site web créé par <a id="achrafloudiy" href="http://ashsolutions.com" target="_blank">Achraf Loudiy</a>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
           </div>
         </div>
       </div>
-    </footer>
-  
+    </footer>  
   </div>
 
     <!-- SCRIPTS -->
