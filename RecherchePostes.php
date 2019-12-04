@@ -161,15 +161,13 @@
               </tr>';
               }
           } 
-          else {
-              echo "mouan 0 results";
-          }
 ?>
 
-
+       
         </tbody>
 
         </table>
+        <a href="index.php" id='retour' class="btn btn-primary border-width-2 d-none d-lg-inline-block">Retour</a>
         </div>
           </section>
           <section class="site-section py-4 mb-5 border-top" style="display:none">
