@@ -104,14 +104,6 @@
         </thead>
         <tbody>
         <?php include 'PopulerPostes.php';?>
-            <tr>
-                <td><a href=""><h2>Programmeur web</h2></a><strong>Domaine: </strong>TI</td>
-                <td>Québec</td>
-                <td>Temps plein</td>
-                <td><strong>30k - 40k</strong></td>
-                <td>2011/04/25</td>
-                <td>2 - 5 ans</td>
-            </tr>
         </tbody>
     </table>
       <!--
