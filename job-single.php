@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="css/owl.carousel.min.css">
   <link rel="stylesheet" href="css/animate.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <?php include 'DBConnect.php';?>
+  <?php include 'getPoste.php';?>
 </head>
 
 <body id="top">
@@ -44,14 +46,14 @@
               <li><a href="about.php">À propos</a></li>
               <li><a href="services.php">Services</a></li>
               <li><a href="blog.php">Blog</a></li>
-              <li class="d-lg-none"><a href="contact.php">Contact Us</a></li>
+              <li class="d-lg-none"><a href="contact.php">Contactez-nous</a></li>
             </ul>
           </nav>
 
           <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
             <div class="ml-auto">
               <a href="contact.php" class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span
-                  class="mr-2 icon-paper-plane"></span>Contact Us</a>
+                  class="mr-2 icon-paper-plane"></span>Contactez-nous</a>
             </div>
             <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span
                 class="icon-menu h3 m-0 p-0 mt-2"></span></a>
@@ -62,17 +64,16 @@
     </header>
 
     <!-- HOME -->
-    <section class="section-hero overlay inner-page bg-image" style="background-image: url('images/hero_1.jpg');"
+    <section class="section-hero overlay inner-page bg-image" style="background-image: url('images/bandeau-job-single.png');"
       id="home-section">
       <div class="container">
         <div class="row">
           <div class="col-md-7">
-            <h1 class="text-white font-weight-bold">Product Designer</h1>
+            <h1 class="text-white font-weight-bold">Détails du poste</h1>
           </div>
         </div>
       </div>
     </section>
-    
     
     <section class="site-section">
       <div class="container">
@@ -83,24 +84,19 @@
                 <img src="images/featured-listing-1.jpg" alt="Free Website Template By Free-Template.co">
               </div>
               <div>
-                <h2>Product Designer</h2>
+                <h2><?php echo $Nom ?></h2>
                 <div>
-                  <span class="ml-0 mr-2 mb-2"><span class="icon-briefcase mr-2"></span>Puma</span>
-                  <span class="m-2"><span class="icon-room mr-2"></span>New York City</span>
-                  <span class="m-2"><span class="icon-clock-o mr-2"></span><span class="text-primary">Full
-                      Time</span></span>
+                  <span class="ml-0 mr-2 mb-2"><span class="icon-bullhorn mr-2"></span> <?php  echo $Publiele ?></span>
+                  <span class="m-2"><span class="icon-room mr-2"></span> <?php  echo $Lieu ?></span>
+                  <span class="m-2"><span class="icon-clock-o mr-2"></span><span class="text-primary"> <?php  echo $Statut ?></span></span>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-lg-4">
             <div class="row">
-              <div class="col-6">
-                <a href="#" class="btn btn-block btn-light btn-md"><span class="icon-heart-o mr-2 text-danger"></span>Save
-                  Job</a>
-              </div>
-              <div class="col-6">
-                <a href="#" class="btn btn-block btn-primary btn-md">Apply Now</a>
+              <div id="postulez" class="col-6">
+                <a href="#" class="btn btn-block btn-primary btn-md">Postulez maintenant</a>
               </div>
             </div>
           </div>
@@ -111,13 +107,7 @@
               <figure class="mb-5"><img src="images/sq_img_1.jpg" alt="Free Website Template by Free-Template.co"
                   class="img-fluid rounded"></figure>
               <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-align-left mr-3"></span>Job
-                Description</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illum fuga eveniet. Deleniti asperiores,
-                commodi quae ipsum quas est itaque, ipsa, dolore beatae voluptates nemo blanditiis iste eius officia minus.
-              </p>
-              <p>Velit unde aliquam et voluptas reiciendis non sapiente labore, deleniti asperiores blanditiis nihil quia
-                officiis dolor vero iste dolore vel molestiae saepe. Id nisi, consequuntur sunt impedit quidem, vitae
-                mollitia!</p>
+              <?php echo $Description ?></p>
             </div>
             <div class="mb-5">
               <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span
@@ -140,7 +130,7 @@
     
             <div class="mb-5">
               <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-book mr-3"></span>Education +
-                Experience</h3>
+                Expérience</h3>
               <ul class="list-unstyled m-0 p-0">
                 <li class="d-flex align-items-start mb-2"><span
                     class="icon-check_circle mr-2 text-muted"></span><span>Necessitatibus quibusdam facilis</span></li>
@@ -178,26 +168,24 @@
           </div>
           <div class="col-lg-4">
             <div class="bg-light p-3 border rounded mb-4">
-              <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Job Summary</h3>
+              <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Résumé</h3>
               <ul class="list-unstyled pl-3 mb-0">
-                <li class="mb-2"><strong class="text-black">Published on:</strong> April 14, 2019</li>
-                <li class="mb-2"><strong class="text-black">Vacancy:</strong> 20</li>
-                <li class="mb-2"><strong class="text-black">Employment Status:</strong> Full-time</li>
-                <li class="mb-2"><strong class="text-black">Experience:</strong> 2 to 3 year(s)</li>
-                <li class="mb-2"><strong class="text-black">Job Location:</strong> New ork City</li>
-                <li class="mb-2"><strong class="text-black">Salary:</strong> $60k - $100k</li>
-                <li class="mb-2"><strong class="text-black">Gender:</strong> Any</li>
-                <li class="mb-2"><strong class="text-black">Application Deadline:</strong> April 28, 2019</li>
+                <li class="mb-2"><strong class="text-black">Publié le:</strong> <?php  echo $Publiele ?></li>
+                <li class="mb-2"><strong class="text-black">Nombre de postes disponibles:</strong> <?php  echo $NombreDePoste ?></li>
+                <li class="mb-2"><strong class="text-black">Statut:</strong> <?php  echo $Statut ?></li>
+                <li class="mb-2"><strong class="text-black">Expérience:</strong> <?php  echo $NombreAnneeExp ?></li>
+                <li class="mb-2"><strong class="text-black">Lieu:</strong> <?php  echo $Lieu ?></li>
+                <li class="mb-2"><strong class="text-black">Salaire:</strong> <?php  echo $Salaire ?></li>
+                <li class="mb-2"><strong class="text-black">Date limite pour postuler:</strong> <?php  echo $DateLimiteApplication ?></li>
               </ul>
             </div>
     
             <div class="bg-light p-3 border rounded">
-              <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Share</h3>
+              <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Partagez le poste</h3>
               <div class="px-3">
-                <a href="#" class="pt-3 pb-3 pr-3 pl-0"><span class="icon-facebook"></span></a>
-                <a href="#" class="pt-3 pb-3 pr-3 pl-0"><span class="icon-twitter"></span></a>
-                <a href="#" class="pt-3 pb-3 pr-3 pl-0"><span class="icon-linkedin"></span></a>
-                <a href="#" class="pt-3 pb-3 pr-3 pl-0"><span class="icon-pinterest"></span></a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=example.org" target="_blank" class="pt-3 pb-3 pr-3 pl-0"><span class="icon-facebook"></span></a>
+                <a href="#" class="pt-3 pb-3 pr-3 pl-0" target="_blank"><span class="icon-linkedin"></span></a>
+                <a href="#" class="pt-3 pb-3 pr-3 pl-0" target="_blank"><span class="icon-outlook"></span></a>
               </div>
             </div>
     

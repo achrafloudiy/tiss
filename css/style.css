@@ -1802,3 +1802,9 @@ a#tablePostes_next
   margin-top: 15px;
   margin-left: 5px;
 }
+
+#postulez
+{
+  flex: 0 0 100%;
+  max-width: 100%;
+}
