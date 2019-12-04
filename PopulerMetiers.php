@@ -6,7 +6,7 @@ function GetDomaine($data){
   try
   {
     $db = mysqli_connect($serveur, $login, $pass, "tiss") or die("Failed to 
-    connect to MySQL: " . mysqli_error());
+    connect to MySQL: " .mysqli_error());
     $db->set_charset("utf8");
     $sql1 = "SELECT ID FROM domaine where Description = '{$data}'" ;
     $result = $db->query($sql1);
@@ -20,12 +20,12 @@ function GetDomaine($data){
     $sql = "SELECT Nom FROM metier WHERE ID_Domaine = '{$idDomaine}'";
     $result = $db->query($sql);
     if ($result->num_rows > 0) {
-      echo "<option value='emploi'>Sélectionnez un emploi</option>";
+      echo "<option value='Sélectionnez un emploi'>Sélectionnez un emploi</option>";
         while ($row = mysqli_fetch_array($result)){
-          echo "<option value='". $row['Nom'] ."'>" .$row['Nom'] ."</option>" ;
+          echo "<option value='".$row['Nom']."'>" .$row['Nom']."</option>" ;
           }
     } else {
-      echo "<option value='emploi'>Sélectionnez un emploi</option>";
+      echo "<option value='Sélectionnez un emploi'>Sélectionnez un emploi</option>";
     }   
   }
   catch(PDOException $e)

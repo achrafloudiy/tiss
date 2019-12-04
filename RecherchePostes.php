@@ -79,49 +79,7 @@
 
 
     </section>
-<?php
-          $NomEmploi = $_POST['poste'];
-          $Ville = $_POST['ville'];
-          if(($NomEmploi=='Sélectionnez un emploi') and ($Ville <> 'Toutes les villes'))
-          {
-            $sql = "SELECT ID FROM emploi where ville = '{$Ville}'" ;
-          }
-          if(($NomEmploi <>'Sélectionnez un emploi') and ($Ville == 'Toutes les villes'))
-          {
-            $sql = "SELECT ID FROM emploi where Titre = '{$NomEmploi}'" ;
-          }
-          elseif(($NomEmploi=='Sélectionnez un emploi') and ($Ville == 'Toutes les villes'))
-          {
-            $sql = "SELECT ID FROM emploi" ;
-          }
-          else
-          {
-            $sql = "SELECT ID FROM emploi where ville = '{$Ville}' and Titre = '{$NomEmploi}'" ;
-          }
-
-          $result = $db->query($sql);
-          if ($result->num_rows > 0) {
-           
-            while ($row = mysqli_fetch_array($result)){
-
-              //TODO trouver un moyen d'afficher le résultat de la recherche dans un datatable et une nouvelle page
-              echo '
-              <tr>
-                <td><a href=""><h2>'.$row['Titre'].'</h2></a><strong>Domaine: </strong>'.$row['ID_Domaine'].'</td>
-                <td>'.$row['Lieu'].'</td>
-                <td>'.$row['Statut'].'</td>
-                <td><strong>'.$row['Salaire'].'</strong></td>
-                <td>'.$row['PublieLe'].'</td>
-                <td>'.$row['NombreAnneeExp'].'</td>
-              </tr>';
-              }
-          } 
-          else {
-              echo "0 results";
-          }
-?>
-
-        <section class="site-section">
+    <section class="site-section">
         <div class="container">
         <table id="tablePostes" class="table table-striped table-bordered" style="width:100%">
           <thead>
@@ -135,6 +93,80 @@
               </tr>
           </thead>
           <tbody>
+<?php
+          //Il faut que je gère les titres de professions en fonction du domaine.
+          $NomDomaine = rtrim($_POST['domaines']);
+          $NomEmploi = rtrim($_POST['professions']);
+          $NomVille = rtrim($_POST['villes']);
+
+          //je get le id du metier relatif au nom
+          if($NomEmploi <>'Sélectionnez un emploi')
+          {
+            $sql = "SELECT * FROM metier WHERE Nom='".$NomEmploi."'";
+            $result = $db->query($sql);
+            if ($result->num_rows > 0) {
+
+              while ($row = mysqli_fetch_array($result)){
+                  $IdMetier = $row['ID'];
+                }
+            } 
+          }
+          //je get le id du domaine relatif au nom
+          if($NomDomaine <>'Sélectionnez un domaine')
+          {
+            $sql = "SELECT * FROM domaine WHERE Description='" .$NomDomaine. "'";
+            $result = $db->query($sql);
+            if ($result->num_rows > 0) {
+
+              while ($row = mysqli_fetch_array($result)){
+                  $IdDomaine = $row['ID'];
+                }
+            } 
+          }
+          if(($NomDomaine=='Sélectionnez un domaine') and ($NomEmploi=='Sélectionnez un emploi') and ($NomVille == 'Toutes les villes'))
+          {
+            $sql = "SELECT emploi.*, metier.Nom, domaine.Description FROM emploi INNER JOIN metier ON emploi.ID_Metier=metier.ID INNER JOIN domaine ON emploi.ID_Domaine=domaine.ID";
+          }
+          elseif(($NomDomaine <>'Sélectionnez un domaine') and ($NomEmploi <>'Sélectionnez un emploi') and ($NomVille <> 'Toutes les villes'))
+          {
+            $sql = "SELECT emploi.*, metier.Nom, domaine.Description FROM emploi INNER JOIN metier ON emploi.ID_Metier=metier.ID INNER JOIN domaine ON emploi.ID_Domaine=domaine.ID WHERE Lieu ='{$NomVille}' AND ID_Metier={$IdMetier}";
+          }
+          elseif(($NomDomaine <>'Sélectionnez un domaine') and ($NomEmploi <>'Sélectionnez un emploi') and ($NomVille == 'Toutes les villes'))
+          {
+            $sql = "SELECT emploi.*, metier.Nom, domaine.Description FROM emploi INNER JOIN metier ON emploi.ID_Metier=metier.ID INNER JOIN domaine ON emploi.ID_Domaine=domaine.ID WHERE emploi.ID_Metier =".$IdMetier ;
+          }
+          elseif(($NomDomaine <>'Sélectionnez un domaine') and ($NomEmploi =='Sélectionnez un emploi') and ($NomVille == 'Toutes les villes'))
+          {
+            $sql = "SELECT emploi.*, metier.Nom, domaine.Description FROM emploi INNER JOIN metier ON emploi.ID_Metier=metier.ID INNER JOIN domaine ON emploi.ID_Domaine=domaine.ID WHERE emploi.ID_Domaine=".$IdDomaine;
+          }
+          elseif(($NomDomaine =='Sélectionnez un domaine') and ($NomEmploi =='Sélectionnez un emploi') and ($NomVille <> 'Toutes les villes'))
+          {
+            $sql = "SELECT emploi.*, metier.Nom, domaine.Description FROM emploi INNER JOIN metier ON emploi.ID_Metier=metier.ID INNER JOIN domaine ON emploi.ID_Domaine=domaine.ID WHERE Lieu ='".$NomVille."'";
+          }
+          elseif(($NomDomaine <>'Sélectionnez un domaine') and ($NomEmploi =='Sélectionnez un emploi') and ($NomVille <> 'Toutes les villes'))
+          {
+            $sql = "SELECT emploi.*, metier.Nom, domaine.Description FROM emploi INNER JOIN metier ON emploi.ID_Metier=metier.ID INNER JOIN domaine ON emploi.ID_Domaine=domaine.ID WHERE emploi.ID_Domaine=".$IdDomaine." AND emploi.Lieu ='".$NomVille."'";
+          }
+          $result = $db->query($sql);
+          if ($result->num_rows > 0) {
+            while ($row = mysqli_fetch_array($result)){
+              echo '
+              <tr>
+                <td><a href=""><h2>'.$row['Nom'].'</h2></a><strong>Domaine: </strong>'.$row['Description'].'</td>
+                <td>'.$row['Lieu'].'</td>
+                <td>'.$row['Statut'].'</td>
+                <td><strong>'.$row['Salaire'].'</strong></td>
+                <td>'.$row['PublieLe'].'</td>
+                <td>'.$row['NombreAnneeExp'].'</td>
+              </tr>';
+              }
+          } 
+          else {
+              echo "mouan 0 results";
+          }
+?>
+
+
         </tbody>
 
         </table>

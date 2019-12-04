@@ -71,19 +71,19 @@
             <form method="post" class="search-jobs-form" action="RecherchePostes.php">
               <div class="row mb-5">
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                  <select id='domaines' class="form-control">
-                    <option value='domaine'>Sélectionnez un domaine</option>
+                  <select name ='domaines' id='domaines' class="form-control">
+                    <option value='Sélectionnez un domaine' name='Sélectionnez un domaine'>Sélectionnez un domaine</option>
                   <?php include 'PopulerDomaines.php';?>
                   </select>
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                  <select id='professions' class="form-control">
-                    <option value='poste' name='poste'>Sélectionnez un emploi</option>
+                  <select name ='professions' id='professions' class="form-control">
+                    <option value='Sélectionnez un emploi' name='Sélectionnez un emploi'>Sélectionnez un emploi</option>
                   </select>
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                  <select id='villes' class="form-control">
-                  <option value='ville' name='ville'>toutes les villes</option>
+                  <select name ='villes' id='villes' class="form-control">
+                  <option value='Toutes les villes' name='Toutes les villes'>Toutes les villes</option>
                   <?php include 'PopulerVilles.php';?>
                   </select>
                 </div>
