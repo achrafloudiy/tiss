@@ -96,7 +96,7 @@
           <div class="col-lg-4">
             <div class="row">
               <div id="postulez" class="col-6">
-                <a href="#" class="btn btn-block btn-primary btn-md">Postulez maintenant</a>
+                <a href="Apply.php?<?php echo $ID ?>" class="btn btn-block btn-primary btn-md">Postulez maintenant</a>
               </div>
             </div>
           </div>

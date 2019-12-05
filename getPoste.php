@@ -15,7 +15,7 @@
   $result = $db->query($sql);
   if ($result->num_rows > 0) {
       while ($row = mysqli_fetch_array($result)){
- 
+        $ID = $row['ID'];
         $Nom = $row['Nom'];
         $Description=$row['Description'];
         $Lieu = $row['Lieu'];

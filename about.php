@@ -176,49 +176,6 @@ Cher(e)s employeurs, cher(e)s candidat(e)s, ensemble tissons l'avenir...</p>
         </div>
     </section>
 
-
-    <section class="py-5 bg-image overlay-primary fixed overlay" style="background-image: url('images/bandeau.jpg');">
-      <div class="container">
-        <div class="row mb-5 justify-content-center">
-          <div class="col-md-7 text-center">
-            <h2 class="section-title mb-2 text-white">Nos statistiques</h2>
-          </div>
-        </div>
-        <div class="row pb-0 block__19738 section-counter">
-
-          <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
-            <div class="d-flex align-items-center justify-content-center mb-2">
-              <strong class="number" data-number=<?php include 'StatistiquesEmployes.php';?>>0</strong>
-            </div>
-            <span class="caption">Candidats</span>
-          </div>
-
-          <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
-            <div class="d-flex align-items-center justify-content-center mb-2">
-              <strong class="number" data-number=<?php include 'StatistiquesEmploisAffiches.php';?>>0</strong>
-            </div>
-            <span class="caption">Postes affichés</span>
-          </div>
-
-          <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
-            <div class="d-flex align-items-center justify-content-center mb-2">
-              <strong class="number" data-number=<?php include 'StatistiquesEmploisCombles.php';?>>0</strong>
-            </div>
-            <span class="caption">Postes comblés</span>
-          </div>
-
-          <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
-            <div class="d-flex align-items-center justify-content-center mb-2">
-              
-              <strong class="number" data-number=<?php include 'StatistiquesEntreprises.php';?>>0</strong>
-            </div>
-            <span class="caption">Entreprises partenaires</span>
-          </div>
-
-            
-        </div>
-      </div>
-    </section>
     <footer class="site-footer">    
       <div class="container">
         <div class="row mb-5">

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Tiss emplois || Contact</title>
+  <title>Tiss emplois || Postulez</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="css/custom-bs.css">
@@ -69,7 +69,7 @@
         <div class="row align-items-center justify-content-center">
           <div class="col-md-12">
             <div class="mb-5 text-center">
-              <h1 class="text-white">Contactez-nous</h1>
+              <h1 class="text-white">Postulez</h1>
             </div>
           </div>
         </div>
@@ -81,16 +81,16 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6 mb-5 mb-lg-0">
-            <form action="#" class="">
+            <form name="form_postulez" method="post" action="form-to-email.php">
     
               <div class="row form-group">
                 <div class="col-md-6 mb-3 mb-md-0">
-                  <label class="text-black" for="fname">Prénom</label>
-                  <input type="text" id="fname" class="form-control">
+                  <label class="text-black" for="fprenom">Prénom</label>
+                  <input type="text" name="fprenom" name="fprenom" class="form-control">
                 </div>
                 <div class="col-md-6">
-                  <label class="text-black" for="lname">Nom</label>
-                  <input type="text" id="lname" class="form-control">
+                  <label class="text-black" for="fnom">Nom</label>
+                  <input type="text" name="fnom" id="fnom" class="form-control">
                 </div>
               </div>
     
@@ -98,29 +98,46 @@
     
                 <div class="col-md-12">
                   <label class="text-black" for="email">Email</label>
-                  <input type="email" id="email" class="form-control">
+                  <input type="email" name="femail" id="femail" class="form-control">
                 </div>
               </div>
-    
               <div class="row form-group">
-    
                 <div class="col-md-12">
-                  <label class="text-black" for="subject">Sujet</label>
-                  <input type="subject" id="subject" class="form-control">
+                  <label class="text-black" for="telephone">Télephone</label>
+                  <input type="telephone" name="ftelephone" id="ftelephone" class="form-control">
                 </div>
               </div>
-    
               <div class="row form-group">
                 <div class="col-md-12">
-                  <label class="text-black" for="message">Message</label>
-                  <textarea name="message" id="message" cols="30" rows="7" class="form-control"
-                    placeholder="Écrivez votre message ici"></textarea>
+                  <label class="text-black" for="Adresse">Adresse</label>
+                  <input type="adresse" name="fadresse" id="fadresse" class="form-control">
                 </div>
               </div>
-    
               <div class="row form-group">
                 <div class="col-md-12">
-                  <input type="submit" value="Send Message" class="btn btn-primary btn-md text-white">
+                  <label class="text-black" for="Pays">Pays de résidence</label>
+                  <input type="Country" name="fpays" name="fpays" class="form-control">
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="text-black" for="message">Parlez-nous de vous</label>
+                  <textarea name="fmessage" id="fmessage" cols="30" rows="7" class="form-control"></textarea>
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="text-black" for="cv">Votre CV</label>
+                  <div>
+                  <input type="file" name="fileToUpload" id="fileToUpload" cols="30" rows="7">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <input type="submit" value="Postulez" class="btn btn-primary btn-md text-white">
                 </div>
               </div>
     
@@ -128,17 +145,7 @@
             </form>
           </div>
           <div class="col-lg-5 ml-auto">
-            <div class="p-4 mb-3 bg-white">
-              <p class="mb-0 font-weight-bold">Address</p>
-              <p class="mb-4">boite postale bidon</p>
-    
-              <p class="mb-0 font-weight-bold">Téléphone</p>
-              <p class="mb-4"><a href="#">+1 232 3235 324</a></p>
-    
-              <p class="mb-0 font-weight-bold">Email</p>
-              <p class="mb-0"><a href="#">info@tissemploi.com</a></p>
-    
-            </div>
+            <img src="images/Postulez.png" id="imgposulez"></img>
           </div>
         </div>
       </div>
