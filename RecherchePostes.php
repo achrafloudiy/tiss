@@ -84,6 +84,7 @@
         <table id="tablePostes" class="table table-striped table-bordered" style="width:100%">
           <thead>
               <tr>
+                  <th></th>
                   <th>Poste</th>
                   <th>Lieu</th>
                   <th>Type</th>
@@ -125,34 +126,34 @@
           }
           if(($NomDomaine=='Sélectionnez un domaine') and ($NomEmploi=='Sélectionnez un emploi') and ($NomVille == 'Toutes les villes'))
           {
-            $sql = "SELECT emploi.*, metier.Nom, domaine.Description FROM emploi INNER JOIN metier ON emploi.ID_Metier=metier.ID INNER JOIN domaine ON emploi.ID_Domaine=domaine.ID";
+            $sql = "SELECT emploi.*, metier.Nom, domaine.UrlImg, domaine.Description FROM emploi INNER JOIN metier ON emploi.ID_Metier=metier.ID INNER JOIN domaine ON emploi.ID_Domaine=domaine.ID";
           }
           elseif(($NomDomaine <>'Sélectionnez un domaine') and ($NomEmploi <>'Sélectionnez un emploi') and ($NomVille <> 'Toutes les villes'))
           {
-            $sql = "SELECT emploi.*, metier.Nom, domaine.Description FROM emploi INNER JOIN metier ON emploi.ID_Metier=metier.ID INNER JOIN domaine ON emploi.ID_Domaine=domaine.ID WHERE Lieu ='{$NomVille}' AND ID_Metier={$IdMetier}";
+            $sql = "SELECT emploi.*, metier.Nom, domaine.UrlImg, domaine.Description FROM emploi INNER JOIN metier ON emploi.ID_Metier=metier.ID INNER JOIN domaine ON emploi.ID_Domaine=domaine.ID WHERE Lieu ='{$NomVille}' AND ID_Metier={$IdMetier}";
           }
           elseif(($NomDomaine <>'Sélectionnez un domaine') and ($NomEmploi <>'Sélectionnez un emploi') and ($NomVille == 'Toutes les villes'))
           {
-            $sql = "SELECT emploi.*, metier.Nom, domaine.Description FROM emploi INNER JOIN metier ON emploi.ID_Metier=metier.ID INNER JOIN domaine ON emploi.ID_Domaine=domaine.ID WHERE emploi.ID_Metier =".$IdMetier ;
+            $sql = "SELECT emploi.*, metier.Nom, domaine.UrlImg, domaine.Description FROM emploi INNER JOIN metier ON emploi.ID_Metier=metier.ID INNER JOIN domaine ON emploi.ID_Domaine=domaine.ID WHERE emploi.ID_Metier =".$IdMetier ;
           }
           elseif(($NomDomaine <>'Sélectionnez un domaine') and ($NomEmploi =='Sélectionnez un emploi') and ($NomVille == 'Toutes les villes'))
           {
-            $sql = "SELECT emploi.*, metier.Nom, domaine.Description FROM emploi INNER JOIN metier ON emploi.ID_Metier=metier.ID INNER JOIN domaine ON emploi.ID_Domaine=domaine.ID WHERE emploi.ID_Domaine=".$IdDomaine;
+            $sql = "SELECT emploi.*, metier.Nom, domaine.UrlImg, domaine.Description FROM emploi INNER JOIN metier ON emploi.ID_Metier=metier.ID INNER JOIN domaine ON emploi.ID_Domaine=domaine.ID WHERE emploi.ID_Domaine=".$IdDomaine;
           }
           elseif(($NomDomaine =='Sélectionnez un domaine') and ($NomEmploi =='Sélectionnez un emploi') and ($NomVille <> 'Toutes les villes'))
           {
-            $sql = "SELECT emploi.*, metier.Nom, domaine.Description FROM emploi INNER JOIN metier ON emploi.ID_Metier=metier.ID INNER JOIN domaine ON emploi.ID_Domaine=domaine.ID WHERE Lieu ='".$NomVille."'";
+            $sql = "SELECT emploi.*, metier.Nom, domaine.UrlImg, domaine.Description FROM emploi INNER JOIN metier ON emploi.ID_Metier=metier.ID INNER JOIN domaine ON emploi.ID_Domaine=domaine.ID WHERE Lieu ='".$NomVille."'";
           }
           elseif(($NomDomaine <>'Sélectionnez un domaine') and ($NomEmploi =='Sélectionnez un emploi') and ($NomVille <> 'Toutes les villes'))
           {
-            $sql = "SELECT emploi.*, metier.Nom, domaine.Description FROM emploi INNER JOIN metier ON emploi.ID_Metier=metier.ID INNER JOIN domaine ON emploi.ID_Domaine=domaine.ID WHERE emploi.ID_Domaine=".$IdDomaine." AND emploi.Lieu ='".$NomVille."'";
+            $sql = "SELECT emploi.*, metier.Nom, domaine.UrlImg, domaine.Description FROM emploi INNER JOIN metier ON emploi.ID_Metier=metier.ID INNER JOIN domaine ON emploi.ID_Domaine=domaine.ID WHERE emploi.ID_Domaine=".$IdDomaine." AND emploi.Lieu ='".$NomVille."'";
           }
           $result = $db->query($sql);
           if ($result->num_rows > 0) {
             while ($row = mysqli_fetch_array($result)){
               echo '
               <tr>
-                <td><a href=""><h2>'.$row['Nom'].'</h2></a><strong>Domaine: </strong>'.$row['Description'].'</td>
+                <td><img src="'.$row['UrlImg'].'"></img></td><td><a href="job-single.php?id='.$row['ID'].'"><h2>'.$row['Nom'].'</h2></a><strong>Domaine: </strong>'.$row['Description'].'</td>
                 <td>'.$row['Lieu'].'</td>
                 <td>'.$row['Statut'].'</td>
                 <td><strong>'.$row['Salaire'].'</strong></td>

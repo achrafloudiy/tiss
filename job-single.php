@@ -81,7 +81,7 @@
           <div class="col-lg-8 mb-4 mb-lg-0">
             <div class="d-flex align-items-center">
               <div class="border p-2 d-inline-block mr-3 rounded">
-                <img src="images/featured-listing-1.jpg" alt="Free Website Template By Free-Template.co">
+                <img src="<?php echo $UrlImg ?>" alt="Free Website Template By Free-Template.co">
               </div>
               <div>
                 <h2><?php echo $Nom ?></h2>
@@ -106,12 +106,15 @@
             <div class="mb-5">
               <figure class="mb-5"><img src="images/sq_img_1.jpg" alt="Free Website Template by Free-Template.co"
                   class="img-fluid rounded"></figure>
-              <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-align-left mr-3"></span>Job
-              <?php echo $Description ?></p>
+              <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-align-left mr-3"></span>Description du poste
+                </h3>
+                <p>
+                <?php echo $Description ?>
+                </p>
             </div>
             <div class="mb-5">
               <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span
-                  class="icon-rocket mr-3"></span>Responsibilities</h3>
+                  class="icon-rocket mr-3"></span>Résponsibilités</h3>
               <ul class="list-unstyled m-0 p-0">
                 <li class="d-flex align-items-start mb-2"><span
                     class="icon-check_circle mr-2 text-muted"></span><span>Necessitatibus quibusdam facilis</span></li>

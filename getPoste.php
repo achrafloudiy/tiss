@@ -10,7 +10,8 @@
   $url.= $_SERVER['REQUEST_URI'];    
   $parts = parse_url($url);
   parse_str($parts['query'], $query);
-  $sql = "SELECT emploi.*, metier.Nom FROM emploi INNER JOIN metier ON emploi.ID_Metier=metier.ID WHERE emploi.ID=".$query['id'];
+  //$sql = "SELECT emploi.*, metier.Nom FROM emploi INNER JOIN metier ON emploi.ID_Metier=metier.ID WHERE emploi.ID=".$query['id']; //." INNER JOIN domaine ON emploi.ID_Domaine=domaine.ID";
+  $sql = "SELECT emploi.*, metier.Nom, domaine.UrlImg FROM emploi INNER JOIN metier ON emploi.ID_Metier=metier.ID INNER JOIN domaine ON emploi.ID_Domaine=domaine.ID WHERE emploi.ID=".$query['id'];
   $result = $db->query($sql);
   if ($result->num_rows > 0) {
       while ($row = mysqli_fetch_array($result)){
@@ -24,6 +25,7 @@
         $NombreAnneeExp = $row['NombreAnneeExp'];
         $NombreDePoste = $row['NombreDePoste']-$row['NombrePosteComble'];
         $DateLimiteApplication = $row['DateLimiteApplication'];
+        $UrlImg = $row['UrlImg'];
     }
   }
   else {
